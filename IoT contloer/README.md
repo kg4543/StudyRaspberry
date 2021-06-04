@@ -1,1 +1,2 @@
-<kbd>![LED](StudyRaspberry/Capture/LED Control.PNG "LED Control")</kbd>
+
+<kbd>![LED](/Capture/LED Control.PNG "LED Control")</kbd>
