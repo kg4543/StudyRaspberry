@@ -34,7 +34,7 @@ global i
 i =1
 ```
 
-# 1. WebPage
+# 1. HomePage
 
 - 'Flask/template' 폴더에 있는 웹페이지를 불러옴
 - @app.route('/') : 첫페이지 로드 시 화면을 띄움
