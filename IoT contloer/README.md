@@ -1,4 +1,5 @@
 # 0. GPIO set
+
 - GPIO.setmode(GPIO.BCM) : 핀 번호를 GPIO모듈 번호로 사용 / (GPIO.BOARD) : 핀 번호를 보드번호를 참조
 - GPIO.setup(Pin,GPIO.IN or OUT) : 핀 번호에서 전류를 보내는지 받는지 설정
 - GPIO.PWM(Pin,Frequency) : 초당 펄스의 주파수를 유지한 채, 펄스의 길이를 변화시킴 (출력 조절)
@@ -47,6 +48,10 @@ def home():
 
 # 2. LED Controler
 
+- ON / OFF Button을 활용해 LED의 불을 키고 끔
+- POST를 통해 value 값을 전달
+- request.form['led']을 통해 값을 받음
+
 <kbd>![LED](/Capture/LED%20Control.PNG "LED Control")</kbd>
 
 ## HTML
@@ -77,6 +82,10 @@ def led():
 ```
 
 # 3. MOOD LED Controler
+
+- webpage의 textbox에 값을 입력하여 그 값을 전달
+- 전달 받은 값을 int로 형 변환하여 'duty'에 저장
+- 사전에 설정한 PWM(md)를 통해 'duty' 값 만큼 출력을 조절
 
 <kbd>![MOOD](/Capture/Mood%20Control.PNG "MOOD Control")</kbd>
 
