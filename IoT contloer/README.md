@@ -2,6 +2,7 @@
 - GPIO.setmode(GPIO.BCM) : 핀 번호를 GPIO모듈 번호로 사용 / (GPIO.BOARD) : 핀 번호를 보드번호를 참조
 - GPIO.setup(Pin,GPIO.IN or OUT) : 핀 번호에서 전류를 보내는지 받는지 설정
 - GPIO.PWM(Pin,Frequency) : 초당 펄스의 주파수를 유지한 채, 펄스의 길이를 변화시킴 (출력 조절)
+- global i : 전역변수로 설정
 
 ## PYTHON
 ```
@@ -36,14 +37,13 @@ i =1
 
 - 'Flask/template' 폴더에 있는 웹페이지를 불러옴
 - @app.route('/') : 첫페이지 로드 시 화면을 띄움
+
 ```
 @app.route('/')
 def home():
     return render_template("webpage.html")
      # render_template를 통해 html파일load
 ```
-
-
 
 # 2. LED Controler
 
