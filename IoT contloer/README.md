@@ -85,7 +85,9 @@ def led():
 
 - webpage의 textbox에 값을 입력하여 그 값을 전달
 - 전달 받은 값을 int로 형 변환하여 'duty'에 저장
-- 사전에 설정한 PWM(md)를 통해 'duty' 값 만큼 출력을 조절
+- 사전에 설정한 PWM(md)를 통해 'duty' 값 만큼 출력을 조절 
+- ex) duty = 50 -> 50% 출력
+      PWM : 1sec에 5V를 출력해야할 경우 0.5sec만 5V를 출력 
 
 <kbd>![MOOD](/Capture/Mood%20Control.PNG "MOOD Control")</kbd>
 
@@ -115,6 +117,12 @@ def mood():
 ```
 
 # 4. Speaker Controler
+
+- textbox에서 1~8까지 수를 입력 데이터 전달
+- 'ON' 값을 전달받아 if문 실행
+- ChangeFrequency('Melody[]') : Melody배열을 불러와 전달받은 값을 통해 주파수 변경
+- 이외의 값이 없거나 범위를 벗어날 경우 Home화면 출력
+- 'OFF' 값을 전달받아 else문 실행
 
 <kbd>![SPEAKER](/Capture/Speaker%20Control.PNG "Speaker Control")</kbd>
 
@@ -153,6 +161,12 @@ def piano():
 
 # 5. Ultra Sonic Controler
 
+- 'ON' 값을 받을 시 전역함수 global i 를 1로 하여 while문을 실행
+- 'OFF'일 경우 i를 0으로 하여 while문 종료
+- 10u/s 주기로 TriggerPin에 (전파)출력을 하여 EchoPin에서 신호를 얼마나 받는지 시간을 측정
+- 신호를 주고 받기까지의 시간을 거리로 계산 : 시간 * (34400/2)   
+- 전파속력 344m/s, 편도 계산을 위해 2로 나눔 | 거리 = 속력 * 시간   
+
 <kbd>![US](/Capture/UltraSonic%20Control.PNG "US Control")</kbd>
 
 ## HTML
@@ -188,7 +202,7 @@ def sonic():
             stop = time.time()
 
         rtTotime = stop - start
-        distance = round((rtTotime * (34000/2)),2)
+        distance = round((rtTotime * (34400/2)),2)
         time.sleep(1)
         print(distance, "cm")
 ```
