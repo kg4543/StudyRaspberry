@@ -55,4 +55,4 @@ network={
 - gcc (file name) -o (실행 file name) : 실행 파일 생성
  
  # IoT Control - WebPage
- [IoT control](/IoT%20contloer/README.md) <br>
+ [IoT control ](/IoT%20contloer/README.md) <br>
