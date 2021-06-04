@@ -1,4 +1,42 @@
-# 1. LED Controler
+# 0. GPIO set
+## PYTHON
+```
+from flask import Flask, request, render_template
+import RPi.GPIO as GPIO
+import time
+
+app = Flask(__name__)
+
+ledPin = 21
+moodPin = 20
+pianoPin = 2
+triggerPin = 4
+echoPin = 3
+Melody = [131, 147, 165, 174, 196, 220, 247, 262]
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(ledPin, GPIO.OUT)
+GPIO.setup(moodPin, GPIO.OUT)
+GPIO.setup(pianoPin, GPIO.OUT)
+GPIO.setup(triggerPin, GPIO.OUT)
+GPIO.setup(echoPin, GPIO.IN)
+
+md = GPIO.PWM(moodPin, 255)
+Buzz = GPIO.PWM(pianoPin, 440)
+
+global i
+i =1
+```
+
+# 1. WebPage
+```
+@app.route('/')
+def home():
+    return render_template("webpage.html")
+     # render_template를 통해 html파일load
+```
+
+# 2. LED Controler
 
 <kbd>![LED](/Capture/LED%20Control.PNG "LED Control")</kbd>
 
@@ -29,7 +67,7 @@ def led():
         return home()
 ```
 
-# 2. MOOD LED Controler
+# 3. MOOD LED Controler
 
 <kbd>![MOOD](/Capture/Mood%20Control.PNG "MOOD Control")</kbd>
 
@@ -58,7 +96,7 @@ def mood():
         return home()
 ```
 
-# 3. Speaker Controler
+# 4. Speaker Controler
 
 <kbd>![SPEAKER](/Capture/Speaker%20Control.PNG "Speaker Control")</kbd>
 
@@ -95,7 +133,7 @@ def piano():
         return home()
 ```
 
-# 4. Ultra Sonic Controler
+# 5. Ultra Sonic Controler
 
 <kbd>![US](/Capture/UltraSonic%20Control.PNG "US Control")</kbd>
 
