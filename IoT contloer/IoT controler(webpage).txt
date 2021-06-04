@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset = "utf-8:">
+    <title>IOT Control</title>
+    </head>
+    <body>
+		<div>
+		<h1>LED Control</h1>
+		<form action = '/led' method = 'post'>
+			<Button type = 'submit' name = 'led' value = 'ON'>ON</Button>
+			<Button type = 'submit' name = 'led' value = 'OFF'>OFF</Button>
+			<Button type = 'submit' name = 'led' value = 'CLEAN'>CLEAN</Button>
+		</form>
+		</div>
+		<div>
+		<h1>Mood Light Control</h1>
+		<form action = '/mood' method = 'post'>
+			<input type = 'text' name = 'mod' />
+			<Button type = 'submit'>ON</Button>
+		</form>
+		</div>
+		<div>
+		<h1>Speaker Control</h1>
+		<form action = '/piano' method = 'post'>
+			<input type = 'textbox' name = 'muz' />
+			<Button type = 'submit' name = 'piano' value = 'ON'>ON</Button>
+			<Button type = 'submit' name = 'piano' value = 'OFF'>OFF</Button>
+		</form>
+		</div>
+		<div>
+		<h1>Ultra Sonic Control</h1>
+		<form action = '/sonic' method = 'POST'>
+			<Button type = 'submit' name = 'sonic' value = 'ON'>ON</Button>
+			<Button type = 'submit' name = 'sonic' value = 'OFF'>OFF</Button>
+		</form>
+		</div>
+    </body>
+</html>
