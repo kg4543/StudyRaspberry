@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Study Flask</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- <script src="{{ url_for('static', filename='js/main.js' )}}"></script> -->
+</head>
+<body>
+    <h1>Node.js 제목</h1>
+    <!--<h3>{#user#}</h3>-->
+    <p>Node.js를 배우고 있는 페이지입니다.</p>
+    <!--<p>
+        유저아이디 : {#data.userid#} <br/>
+        성별 : {#data.gender#} <br/>
+        나이 : {#data.age#} <br/>
+    </p>-->
+
+    <form action="/get" method="GET">
+        <input type="text" name="user">
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>
