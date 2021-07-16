@@ -20,7 +20,7 @@
       <x>20</x>
       <y>10</y>
       <width>411</width>
-      <height>91</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="title">
@@ -52,24 +52,24 @@
       <string>검색</string>
      </property>
     </widget>
-    <widget class="QPlainTextEdit" name="TxtSearchWord">
+    <widget class="QLineEdit" name="TxtSearchWord">
      <property name="geometry">
       <rect>
        <x>60</x>
        <y>40</y>
        <width>271</width>
-       <height>31</height>
+       <height>33</height>
       </rect>
      </property>
     </widget>
    </widget>
-   <widget class="QListView" name="LsbResult">
+   <widget class="QTableWidget" name="tblResult">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>421</width>
-      <height>191</height>
+      <x>20</x>
+      <y>100</y>
+      <width>401</width>
+      <height>211</height>
      </rect>
     </property>
    </widget>
@@ -84,7 +84,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="stsResult"/>
  </widget>
  <resources/>
  <connections/>
