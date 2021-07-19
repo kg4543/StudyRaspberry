@@ -25,15 +25,15 @@ if __name__ == '__main__':
 
     #cascade_fn = "/usr/local/share/OpenCV/lbpcascades/lbpcascade_frontalface.xml"
     #cascade_fn = "haarcascade_frontalface_default.xml"
-    cascade_fn = "lbpcascade_frontalface.xml"
+    cascade_fn = "./OpenCV/haarcascade_frontalface_alt.xml"
     #nested_fn  = "/usr/local/share/OpenCV//haarcascades/haarcascade_eye.xml"
 
     cascade = cv2.CascadeClassifier(cascade_fn)
     #nested = cv2.CascadeClassifier(nested_fn)
 
     cam = cv2.VideoCapture(0)
-    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+    cam.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
     while True:
         ret, img = cam.read()
@@ -54,6 +54,10 @@ if __name__ == '__main__':
         draw_str(vis, 20, 20, 'time: %.1f ms' % (dt*1000))
         cv2.imshow('facedetect', vis)
 
-        if 0xFF & cv2.waitKey(5) == 27:
+        if 0xFF & cv2.waitKey(5) == ord('q'):
             break
+
+    img.release()
+    gray.release()
+    vis.release()
     cv2.destroyAllWindows()
