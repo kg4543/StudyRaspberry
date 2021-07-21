@@ -34,11 +34,11 @@ while True:
     elif key == ord('c'): #'c' 입력 시 화면캡쳐
         cv2.imwrite('./Capture/img_{0}.png'.format(fileDateTime), frame)
         print('이미지 저장 완료')
-    elif key == ord('r'):
+    elif key == ord('r') and is_record == False:
         is_record = True
         video = cv2.VideoWriter('./Capture/Record_{0}.avi'.format(fileDateTime), fourcc, 20, (w, h))
         print('녹화 시작')
-    elif key == ord('t') and is_record == True:
+    elif key == ord('r') and is_record == True:
         is_record = False
         video.release() #객체 해제
         print('녹화 완료')
