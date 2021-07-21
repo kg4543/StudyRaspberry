@@ -35,8 +35,8 @@ def get_diff_image(frame_a,frame_b,frame_c,threshold):
 
 #카메라 기본 프레임
 cam = cv2.VideoCapture(0) # cam 열기, 번호 0 ~ 
-cam.set(cv2.CAP_PROP_FRAME_WIDTH,640) # 크기 조절
-cam.set(cv2.CAP_PROP_FRAME_HEIGHT,480)
+cam.set(cv2.CAP_PROP_FRAME_WIDTH,320) # 크기 조절
+cam.set(cv2.CAP_PROP_FRAME_HEIGHT,240)
 
 #나눔고딕볼트 로드
 font = ImageFont.truetype('./Fonts/NanumGothicBold.ttf', 20)
