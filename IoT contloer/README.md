@@ -6,7 +6,7 @@
 - global i : 전역변수로 설정
 
 ## PYTHON
-```
+```Python
 from flask import Flask, request, render_template
 import RPi.GPIO as GPIO
 import time
@@ -39,7 +39,7 @@ i =1
 - 'Flask/template' 폴더에 있는 웹페이지를 불러옴
 - @app.route('/') : 첫페이지 로드 시 화면을 띄움
 
-```
+```Python
 @app.route('/')
 def home():
     return render_template("webpage.html")
@@ -55,18 +55,18 @@ def home():
 <kbd>![LED](/Capture/LED%20Control.PNG "LED Control")</kbd>
 
 ## HTML
-```
+```html
 <div>
-		<h1>LED Control</h1>
-		<form action = '/led' method = 'post'>
-			<Button type = 'submit' name = 'led' value = 'ON'>ON</Button>
-			<Button type = 'submit' name = 'led' value = 'OFF'>OFF</Button>
-			<Button type = 'submit' name = 'led' value = 'CLEAN'>CLEAN</Button>
-		</form>
+	<h1>LED Control</h1>
+	<form action = '/led' method = 'post'>
+		<Button type = 'submit' name = 'led' value = 'ON'>ON</Button>
+		<Button type = 'submit' name = 'led' value = 'OFF'>OFF</Button>
+		<Button type = 'submit' name = 'led' value = 'CLEAN'>CLEAN</Button>
+	</form>
 </div>
 ```
 ## PYTHON
-```
+```Python
 @app.route('/led', methods = ['POST'])
 def led():
     data = request.form['led']
@@ -92,17 +92,17 @@ def led():
 <kbd>![MOOD](/Capture/Mood%20Control.PNG "MOOD Control")</kbd>
 
 ## HTML
-```
+```html
 <div>
-		<h1>Mood Light Control</h1>
-		<form action = '/mood' method = 'post'>
-			<input type = 'text' name = 'mod' />
-			<Button type = 'submit'>ON</Button>
-		</form>
+	<h1>Mood Light Control</h1>
+	<form action = '/mood' method = 'post'>
+		<input type = 'text' name = 'mod' />
+		<Button type = 'submit'>ON</Button>
+	</form>
 </div>
 ```
 ## PYTHON
-```
+```Python
 @app.route('/mood', methods = ['POST'])
 def mood():
     mod = request.form['mod']
@@ -127,18 +127,18 @@ def mood():
 <kbd>![SPEAKER](/Capture/Speaker%20Control.PNG "Speaker Control")</kbd>
 
 ## HTML
-```
+```html
 <div>
-		<h1>Speaker Control</h1>
-		<form action = '/piano' method = 'post'>
-			<input type = 'textbox' name = 'muz' />
-			<Button type = 'submit' name = 'piano' value = 'ON'>ON</Button>
-			<Button type = 'submit' name = 'piano' value = 'OFF'>OFF</Button>
-		</form>
+	<h1>Speaker Control</h1>
+	<form action = '/piano' method = 'post'>
+		<input type = 'textbox' name = 'muz' />
+		<Button type = 'submit' name = 'piano' value = 'ON'>ON</Button>
+		<Button type = 'submit' name = 'piano' value = 'OFF'>OFF</Button>
+	</form>
 </div>
 ```
 ## PYTHON
-```
+```Python
 @app.route('/piano', methods = ['POST'])
 def piano():
     mus = request.form['muz']
@@ -170,7 +170,7 @@ def piano():
 <kbd>![US](/Capture/UltraSonic%20Control.PNG "US Control")</kbd>
 
 ## HTML
-```
+```html
 <div>
 		<h1>Ultra Sonic Control</h1>
 		<form action = '/sonic' method = 'POST'>
@@ -180,7 +180,7 @@ def piano():
 </div>
 ```
 ## PYTHON
-```
+```Python
 @app.route('/sonic', methods = ['POST'])
 def sonic():
     data = request.form['sonic']
